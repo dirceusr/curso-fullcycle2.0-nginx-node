@@ -15,7 +15,6 @@ services:
         - "80"
       depends_on: 
         - db 
-      command: npm install 
       command: node index.js     
 
     db:

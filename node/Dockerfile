@@ -2,10 +2,6 @@ FROM node:15
 
 WORKDIR /usr/src/app
 
-#COPY package.json package-lock.json* ./
-
-#RUN mkdir /usr/src/app/node_modules && chown -R node:node /usr/src/app/
-
 COPY . . 
 
 RUN apt-get update && apt-get install -y wget
@@ -17,7 +13,5 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 
 RUN npm install   
-
-COPY . . 
 
 CMD ["node","index.js"]
