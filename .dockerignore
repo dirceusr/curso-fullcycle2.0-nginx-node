@@ -1,2 +1,4 @@
 node_modules
-nmp-debud.log
+npm-debug.log
+Dockerfile
+.dockerignore
