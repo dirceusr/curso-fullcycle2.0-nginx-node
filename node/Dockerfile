@@ -1,5 +1,7 @@
 FROM node:15
 
+RUN mkdir -p /usr/src/app/node_modules && chown -R node:node /usr/src/app
+
 WORKDIR /usr/src/app
 
 COPY . . 
@@ -13,5 +15,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 
 RUN npm install   
+
+COPY . .
 
 CMD ["node","index.js"]
